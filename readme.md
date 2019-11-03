@@ -1,4 +1,17 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<h1>WEB MENGELOLAH DATA MAHASISWA + ADMIN DASHBOARD</h1>
+    <p>DENGAN FITUR</p>
+    <p>Fitur Ranking<p/>
+    <p>Export Excel dan PDF</p>
+    <p>Grafik Chart</p>
+    <p>DBMS Manual relasi One to One ,One to Many ,Many To Many</p>
+    <p>Multilevel User</p>
+    <p>SweatAlert</p>
+    <p>Blogging</p>
+    <p>xDatatable</p>
+    <p>Helper Custome Function</p>
+    <p>Laravel Collective</p>
+    
+    <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
