@@ -19,7 +19,7 @@
                         <div class="panel-heading">
                             <h1 class="panel-title">Daftar POSTS</h1>
 
-                            <a href="#"class="btn btn-primary margin-top-30">Add Post</a>
+                            <a href="{{route('addpost')}}"class="btn btn-primary margin-top-30">Add Post</a>
                             <div class="right">
                                 <a href="#" class="btn btn-info">Export Excel</a>
                                 <a href="#" class="btn btn-danger">Export PDF</a>
@@ -32,7 +32,8 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">Role</th>
-                                        <th class="text-center">Title</th>
+                                        <th class="text-center">user_Id</th>
+                                        <th class="text-center">Id</th>
                                         <th class="text-center">Content</th>
                                         <th class="text-center">Slug</th>
                                         <th class="text-center">Thumbnail</th>
@@ -41,17 +42,18 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    @foreach ($post as $p)
+                                    @foreach ($posts as $post)
                                     <tr>
-                                        <td>{{$p->user->role}}</td>
-                                        <td>{{$p->title}}</td>
-                                        <td>{{$p->content}}</td>
-                                        <td>{{$p->slug}}</td>
-                                        <td>{{$p->thumbnail}}</td>
-                                        <td>{{$p->created_at->format('d-M-y')}}</td>
+                                        <td>{{$post->user->role}}</td>
+                                        <td>{{$post->user_id}}</td>
+                                        <td>{{$post->id}}</td>
+                                        <td>{{$post->content}}</td>
+                                        <td>{{$post->slug}}</td>
+                                        <td>{{$post->thumbnail}}</td>
+                                        <td>{{$post->created_at->format('d-M-y')}}</td>
                                             <td>
                                                 {{-- view disini menggunakan penamaan unik,tambahkan target untuk tidak menutup dashboard/langsung berpindah ke tab baru --}}
-                                            <a target="_blank" href="{{route('site.single.post',$p->slug)}}" class="btn btn-success btn-sm">View</a>
+                                            <a target="_blank" href="{{route('site.single.post',$post->slug)}}" class="btn btn-success btn-sm">View</a>
                                             <a href="#" class="btn btn-primary btn-sm" >Edit</a>
                                             <a href="#" class="btn btn-danger btn-sm">Delete</a>
 

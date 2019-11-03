@@ -40,7 +40,15 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/siswa/exportpdf', 'SiswaController@exportPdf');
 
     //Route Posts
-    Route::get('/posts', 'PostController@index');
+    Route::get('/posts', 'PostController@index')->name('posts.index');
+    Route::get('/addpost', [
+        'uses' => 'PostController@add',
+        'as' => 'addpost',
+    ]);
+    Route::post('/post/create', [
+        'uses' => 'PostController@create',
+        'as' => 'post.create',
+    ]);
 
     // Route Guru
     Route::get('/guru/{idguru}/profile', 'GuruController@profile');
@@ -55,6 +63,8 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
 Route::group(['middleware' => ['auth', 'checkRole:admin,siswa']], function () {
     Route::get('/dashboard', 'AdminController@index');
 });
+
+
 Route::get('/{slug}', [
     //uses dan as ini adalah penamaan dari laravel
     'uses' => 'SiteController@singlepost', //uses disini maksudnya kita menggunakan Controller yang mana

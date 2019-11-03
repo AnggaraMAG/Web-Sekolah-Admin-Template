@@ -18,8 +18,13 @@
         <!-- GOOGLE FONTS -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
         <!-- ICONS -->
-        <link rel="apple-touch-icon" sizes="76x76" href="asset{{('admin/assets/{{asset('/education')}}/apple-icon.png')}}">
-        <link rel="icon" type="image/png" sizes="96x96" href="{{asset('admin/assets/{{asset('/education')}}/favicon.png')}}">
+        {{-- <link rel="apple-touch-icon" sizes="76x76" href="asset{{('admin/assets/{{asset('/education')}}/apple-icon.png')}}"> --}}
+        {{-- <link rel="icon" type="image/png" sizes="96x96" href="{{asset('admin/assets/{{asset('/education')}}/favicon.png')}}"> --}}
+        <style>
+        .ck-editor__editable_inline {
+            min-height: 500px;
+        }
+        </style>
         @yield('head')
 
 </head>
@@ -56,6 +61,7 @@
 	<script src="{{asset('admin/assets/vendor/chartist/js/chartist.min.js')}}"></script>
     <script src="{{asset('admin/assets/scripts/klorofil-common.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="{{asset('/education/js/ckeditor.js')}}"></script>
     @yield('script')
 </body>
 
