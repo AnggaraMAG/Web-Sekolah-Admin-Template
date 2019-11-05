@@ -51,7 +51,12 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     ]);
 
     // Route Guru
+    Route::get('/guru', 'GuruController@index')->name('guru.index');
+    Route::get('/guru/tambahguru', 'GuruController@create')->name('guru.create');
+    Route::post('/guru', 'GuruController@store')->name('guru.store');
     Route::get('/guru/{idguru}/profile', 'GuruController@profile');
+    Route::get('/guru/{guru}/delete', 'GuruController@destroy')->name('guru.destroy');
+
 
     //Route Mapel
     Route::get('/mapel', 'MapelController@index');
